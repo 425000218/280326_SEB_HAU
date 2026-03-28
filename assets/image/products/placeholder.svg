@@ -1,0 +1,11 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#E8F4FD"/>
+  <rect width="300" height="200" fill="none" stroke="#0B5FFF" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  <g transform="translate(150, 100)">
+    <circle cx="-30" cy="-20" r="25" fill="#0B5FFF" opacity="0.2"/>
+    <path d="M -20,-35 L 20,-35 L 20,35 L -20,35 Z" fill="#0B5FFF" opacity="0.15"/>
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">
+      Hình ảnh sản phẩm
+    </text>
+  </g>
+</svg>

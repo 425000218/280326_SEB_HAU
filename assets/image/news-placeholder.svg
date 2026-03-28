@@ -1,0 +1,11 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F9FAFB"/>
+  <rect width="400" height="300" fill="none" stroke="#0B5FFF" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  <g transform="translate(200, 150)">
+    <circle cx="0" cy="-30" r="30" fill="#0B5FFF" opacity="0.2"/>
+    <rect x="-35" y="15" width="70" height="80" rx="5" fill="#0B5FFF" opacity="0.15"/>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="16" fill="#6B7280" text-anchor="middle">
+      Tin tức &amp; Sự kiện
+    </text>
+  </g>
+</svg>
