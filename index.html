@@ -304,11 +304,94 @@
         </div>
     </footer>
 
+    <!-- Login Modal Popup -->
+    <div id="loginModal" class="c-modal" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+        <div class="c-modal__overlay" id="loginModalOverlay"></div>
+        <div class="c-modal__content c-modal__content--login">
+            <!-- Close Button -->
+            <button class="c-modal__close" id="loginModalClose" aria-label="Đóng">✕</button>
+            
+            <!-- Modal Header with Illustration -->
+            <div class="c-modal__login-header">
+                <img src="/assets/image/illustrations/auth-person.jpg" alt="Người dùng" class="c-modal__login-image">
+            </div>
+
+            <!-- Form Container -->
+            <div class="c-modal__login-form">
+                <h2 class="c-modal__title" id="loginModalTitle">ĐĂNG NHẬP</h2>
+
+                <form class="c-auth-form c-auth-form--login" id="loginForm">
+                    <!-- Email Input -->
+                    <div class="c-form-group">
+                        <label for="modalEmail" class="c-form-group__label">Tên đăng nhập/Email</label>
+                        <input type="email" id="modalEmail" class="c-form-group__input" placeholder="Nhập email hoặc tên đăng nhập" required>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="c-form-group">
+                        <label for="modalPassword" class="c-form-group__label">Nhập mật khẩu</label>
+                        <input type="password" id="modalPassword" class="c-form-group__input" placeholder="Nhập mật khẩu" required>
+                    </div>
+
+                    <!-- Forgot Password -->
+                    <div class="c-forgot-password">
+                        <a href="#">Quên mật khẩu</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="c-btn c-btn--primary c-btn--block">ĐĂNG NHẬP</button>
+
+                    <!-- Divider -->
+                    <div class="c-auth-form__divider"></div>
+
+                    <!-- Sign Up Link -->
+                    <div class="c-auth-form__footer">
+                        Chưa có tài khoản? <a href="/pages/signup.html">Đăng ký</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="/assets/js/utils.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/navbar.js"></script>
     <script src="/assets/js/sidebar-filter.js"></script>
     <script src="/assets/js/modal.js"></script>
+    <script>
+        // Login Modal Handler
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const loginModalClose = document.getElementById('loginModalClose');
+        const loginModalOverlay = document.getElementById('loginModalOverlay');
+
+        loginBtn.addEventListener('click', () => {
+            loginModal.classList.add('c-modal--active');
+            loginModal.setAttribute('aria-hidden', 'false');
+        });
+
+        const closeLoginModal = () => {
+            loginModal.classList.remove('c-modal--active');
+            loginModal.setAttribute('aria-hidden', 'true');
+        };
+
+        loginModalClose.addEventListener('click', closeLoginModal);
+        loginModalOverlay.addEventListener('click', closeLoginModal);
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && loginModal.classList.contains('c-modal--active')) {
+                closeLoginModal();
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Đăng nhập: ' + document.getElementById('modalEmail').value);
+            closeLoginModal();
+        });
+    </script>
 </body>
 </html>
