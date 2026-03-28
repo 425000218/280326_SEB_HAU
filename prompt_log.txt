@@ -1,0 +1,7 @@
+﻿[2026-03-28 18:31:20] https://www.figma.com/design/wRbuPQho8fPGFaRfe5kx0n/OFM-Pham-cong-hau?node-id=163-1808&p=f&t=YhIXc1DMTqnUzMeg-0
+
+phân tích cấu trúc file figma của dự án này, lưu các struct, css, component, font, layout vào file struct.txt định dang unicode F8
+
+dự kiến tôi làm trên HTML5,CSS3
+
+

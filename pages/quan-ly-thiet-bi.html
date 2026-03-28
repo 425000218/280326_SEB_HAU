@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quản lý thiết bị - SEB">
+    <title>SEB | Quản lý thiết bị</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    
+    <style>
+        .equipment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-4);
+        }
+        .equipment-table thead {
+            background-color: var(--color-bg-secondary);
+        }
+        .equipment-table th {
+            padding: var(--space-3);
+            text-align: left;
+            font-weight: var(--font-weight-semibold);
+            border-bottom: 2px solid var(--color-border);
+        }
+        .equipment-table td {
+            padding: var(--space-3);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .row-status {
+            display: inline-block;
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semibold);
+        }
+        .row-status.on-loan {
+            background-color: var(--color-warning-light);
+            color: var(--color-warning);
+        }
+        .row-status.overdue {
+            background-color: var(--color-danger-light);
+            color: var(--color-danger);
+        }
+        .row-status.pending {
+            background-color: var(--color-info-light);
+            color: var(--color-info);
+        }
+        .row-status.returned {
+            background-color: var(--color-success-light);
+            color: var(--color-success);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="c-header">
+        <div class="c-header__inner">
+            <div class="c-header__logo">
+                <img src="/assets/image/logo.png" alt="Logo">
+                <div class="c-header__logo-text">
+                    <h1>TRƯỜNG TRUNG HỌC<br>HỆ THỐNG MƯỢN/TRẢ THIẾT BỊ</h1>
+                </div>
+            </div>
+
+            <button class="c-header__menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+            <nav class="c-header__nav-wrapper" id="navWrapper">
+                <ul class="c-nav">
+                    <li><a href="/index.html" class="c-nav__item">Trang chủ</a></li>
+                    <li><a href="/pages/kho.html" class="c-nav__item">Kho thiết bị</a></li>
+                    <li><a href="/pages/lich.html" class="c-nav__item">Lịch</a></li>
+                    <li><a href="/pages/mon-hoc.html" class="c-nav__item">Môn học</a></li>
+                    <li><a href="#" class="c-nav__item">Tin tức</a></li>
+                    <li><a href="#" class="c-nav__item">Liên hệ</a></li>
+                </ul>
+            </nav>
+
+            <div class="c-header__search">
+                <input type="text" class="c-header__search-input" placeholder="Tìm kiếm thiết bị...">
+            </div>
+
+            <div class="c-header__actions">
+                <button class="c-btn c-btn--sm" style="background-color: white; color: var(--color-primary);">👤</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Title Section -->
+        <section style="background-color: var(--color-bg-secondary);">
+            <div class="container">
+                <h1 style="text-align: center; color: var(--color-primary); margin-bottom: 0;">QUẢN LÝ THIẾT BỊ MƯỢN</h1>
+            </div>
+        </section>
+
+        <!-- Borrowed Equipment Section -->
+        <section>
+            <div class="container">
+                <h2 style="color: var(--color-text-primary); font-size: var(--font-size-xl); margin-bottom: var(--space-4);">Thiết bị đang mượn</h2>
+
+                <div style="overflow-x: auto;">
+                    <table class="equipment-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">Tên thiết bị</th>
+                                <th style="width: 15%;">Mã thiết bị</th>
+                                <th style="width: 15%;">Ngày mượn</th>
+                                <th style="width: 15%;">Ngày trả dự kiến</th>
+                                <th style="width: 15%;">Trạng thái</th>
+                                <th style="width: 20%;">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Máy chiếu</td>
+                                <td>MCH-001</td>
+                                <td>15/03/2025</td>
+                                <td>20/03/2025</td>
+                                <td><span class="row-status on-loan">ĐANG MƯỢN</span></td>
+                                <td>
+                                    <button class="c-btn c-btn--sm" style="background-color: var(--color-success); color: white; margin-right: var(--space-2);">Trả</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Máy tính bảng</td>
+                                <td>MTB-005</td>
+                                <td>10/03/2025</td>
+                                <td>17/03/2025</td>
+                                <td><span class="row-status overdue">QUÁ HẠN</span></td>
+                                <td>
+                                    <button class="c-btn c-btn--sm" style="background-color: var(--color-danger); color: white; margin-right: var(--space-2);">Trả ngay</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bộ loa bluetooth</td>
+                                <td>BLB-008</td>
+                                <td>01/03/2025</td>
+                                <td>25/03/2025</td>
+                                <td><span class="row-status on-loan">ĐANG MƯỢN</span></td>
+                                <td>
+                                    <button class="c-btn c-btn--sm" style="background-color: var(--color-success); color: white; margin-right: var(--space-2);">Trả</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment History Section -->
+        <section style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <h2 style="color: var(--color-text-primary); font-size: var(--font-size-xl); margin-bottom: var(--space-4);">Lịch sử mượn thiết bị</h2>
+
+                <div style="overflow-x: auto;">
+                    <table class="equipment-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">Tên thiết bị</th>
+                                <th style="width: 15%;">Mã thiết bị</th>
+                                <th style="width: 15%;">Ngày mượn</th>
+                                <th style="width: 15%;">Ngày trả</th>
+                                <th style="width: 20%;">Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Đèn chiếu sáng</td>
+                                <td>DCS-003</td>
+                                <td>25/02/2025</td>
+                                <td>05/03/2025</td>
+                                <td><span class="row-status returned">ĐÃ TRẢ</span></td>
+                            </tr>
+                            <tr>
+                                <td>Máy ảnh kỹ thuật số</td>
+                                <td>MAK-002</td>
+                                <td>15/02/2025</td>
+                                <td>28/02/2025</td>
+                                <td><span class="row-status returned">ĐÃ TRẢ</span></td>
+                            </tr>
+                            <tr>
+                                <td>Micro không dây</td>
+                                <td>MND-010</td>
+                                <td>01/02/2025</td>
+                                <td>12/02/2025</td>
+                                <td><span class="row-status returned">ĐÃ TRẢ</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Request New Equipment Section -->
+        <section>
+            <div class="container" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                <h2 style="color: var(--color-text-primary); font-size: var(--font-size-xl); margin-bottom: var(--space-4); text-align: center;">Yêu cầu mượn thiết bị mới</h2>
+
+                <form class="c-form" id="requestForm">
+                    <div class="c-form-group">
+                        <label for="equipmentName">Tên thiết bị</label>
+                        <input type="text" id="equipmentName" name="equipmentName" class="c-form-group__input" placeholder="Nhập tên thiết bị cần mượn" required>
+                    </div>
+
+                    <div class="c-form__row c-form__row--2col">
+                        <div class="c-form-group">
+                            <label for="borrowDate">Ngày mượn</label>
+                            <input type="date" id="borrowDate" name="borrowDate" class="c-form-group__input" required>
+                        </div>
+                        <div class="c-form-group">
+                            <label for="returnDate">Ngày trả dự kiến</label>
+                            <input type="date" id="returnDate" name="returnDate" class="c-form-group__input" required>
+                        </div>
+                    </div>
+
+                    <div class="c-form-group">
+                        <label for="purpose">Mục đích sử dụng</label>
+                        <textarea id="purpose" name="purpose" class="c-form-group__input" placeholder="Mô tả mục đích sử dụng thiết bị..." rows="4" required></textarea>
+                    </div>
+
+                    <div class="c-form-group">
+                        <label for="quantity">Số lượng</label>
+                        <input type="number" id="quantity" name="quantity" class="c-form-group__input" value="1" min="1" required>
+                    </div>
+
+                    <div class="c-form__actions">
+                        <button type="submit" class="c-btn">Gửi yêu cầu</button>
+                        <button type="reset" class="c-btn c-btn--outline">Xóa</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="c-footer">
+        <div class="c-footer__container">
+            <div class="c-footer__content">
+                <p class="c-footer__copyright">Copyright 2025</p>
+            </div>
+            <p style="text-align: center; font-size: var(--font-size-xs); color: var(--color-text-secondary); padding-top: var(--space-4);">
+                Hotline: 0344655621
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/modal.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script>
+        // Request form submission
+        const requestForm = document.getElementById('requestForm');
+        requestForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const equipmentName = document.getElementById('equipmentName').value;
+            const borrowDate = document.getElementById('borrowDate').value;
+            const returnDate = document.getElementById('returnDate').value;
+            const purpose = document.getElementById('purpose').value;
+            const quantity = document.getElementById('quantity').value;
+
+            // Validate dates
+            if (new Date(borrowDate) >= new Date(returnDate)) {
+                alert('Ngày trả phải sau ngày mượn!');
+                return;
+            }
+
+            // Show confirmation
+            alert(`Yêu cầu mượn "${equipmentName}" đã được gửi thành công!\n\nThông tin:\n- Ngày mượn: ${borrowDate}\n- Ngày trả dự kiến: ${returnDate}\n- Số lượng: ${quantity}\n\nVui lòng chờ phê duyệt từ quản lý.`);
+            
+            // Reset form
+            requestForm.reset();
+        });
+
+        // Return equipment
+        const returnButtons = document.querySelectorAll('button:contains("Trả")');
+        document.querySelectorAll('button').forEach(btn => {
+            if (btn.textContent.includes('Trả')) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const row = this.closest('tr');
+                    const equipmentName = row.querySelector('td').textContent;
+                    if (confirm(`Xác nhận trả "${equipmentName}"?`)) {
+                        alert('Thiết bị đã được ghi nhận trả. Cảm ơn bạn!');
+                        row.style.opacity = '0.5';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang cá nhân - SEB">
+    <title>SEB | Trang cá nhân</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="c-header">
+        <div class="c-header__inner">
+            <div class="c-header__logo">
+                <img src="/assets/image/logo.png" alt="Logo">
+                <div class="c-header__logo-text">
+                    <h1>TRƯỜNG TRUNG HỌC<br>HỆ THỐNG MƯỢN/TRẢ THIẾT BỊ</h1>
+                </div>
+            </div>
+
+            <button class="c-header__menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+            <nav class="c-header__nav-wrapper" id="navWrapper">
+                <ul class="c-nav">
+                    <li><a href="/index.html" class="c-nav__item">Trang chủ</a></li>
+                    <li><a href="/pages/kho.html" class="c-nav__item">Kho thiết bị</a></li>
+                    <li><a href="/pages/lich.html" class="c-nav__item">Lịch</a></li>
+                    <li><a href="/pages/mon-hoc.html" class="c-nav__item">Môn học</a></li>
+                    <li><a href="#" class="c-nav__item">Tin tức</a></li>
+                    <li><a href="#" class="c-nav__item">Liên hệ</a></li>
+                </ul>
+            </nav>
+
+            <div class="c-header__search">
+                <input type="text" class="c-header__search-input" placeholder="Tìm kiếm thiết bị...">
+            </div>
+
+            <div class="c-header__actions">
+                <button class="c-btn c-btn--sm" style="background-color: white; color: var(--color-primary);">👤</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Title Section -->
+        <section style="background-color: var(--color-bg-secondary);">
+            <div class="container">
+                <h1 style="text-align: center; color: var(--color-primary); margin-bottom: 0;">THÔNG TIN CÁCH NHÂN</h1>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section>
+            <div class="container" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                <!-- Profile Header -->
+                <div style="text-align: center; padding: var(--space-8) 0;">
+                    <div style="width: 120px; height: 120px; border-radius: 50%; background-color: var(--color-primary); margin-left: auto; margin-right: auto; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-5xl);">
+                        👤
+                    </div>
+                    <h2 style="margin-top: var(--space-4); color: var(--color-text-primary); font-size: var(--font-size-xl);">Nguyễn Văn A</h2>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">Giáo viên chính thức</p>
+                </div>
+
+                <!-- Profile Form -->
+                <form class="c-form" id="profileForm">
+                    <h3 class="c-form__title">Thông tin cá nhân</h3>
+
+                    <div class="c-form__row c-form__row--2col">
+                        <div class="c-form-group">
+                            <label for="fullName">Họ và tên</label>
+                            <input type="text" id="fullName" name="fullName" class="c-form-group__input" value="Nguyễn Văn A" readonly>
+                        </div>
+                        <div class="c-form-group">
+                            <label for="position">Chức vụ</label>
+                            <select id="position" name="position" class="c-form-group__input" disabled>
+                                <option selected>Giáo viên</option>
+                                <option>Trưởng bộ môn</option>
+                                <option>Hiệu trưởng</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="c-form__row c-form__row--2col">
+                        <div class="c-form-group">
+                            <label for="employeeId">Mã nhân viên</label>
+                            <input type="text" id="employeeId" name="employeeId" class="c-form-group__input" value="GV001234" readonly>
+                        </div>
+                        <div class="c-form-group">
+                            <label for="department">Phòng ban</label>
+                            <select id="department" name="department" class="c-form-group__input" disabled>
+                                <option>Bộ môn Toán</option>
+                                <option>Bộ môn Tin học</option>
+                                <option>Bộ môn KHTN</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="c-form__row c-form__row--2col">
+                        <div class="c-form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="c-form-group__input" value="nguyen.van.a@school.edu.vn" readonly>
+                        </div>
+                        <div class="c-form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" class="c-form-group__input" value="0912345678" readonly>
+                        </div>
+                    </div>
+
+                    <div class="c-form__row">
+                        <div class="c-form-group">
+                            <label for="dateOfBirth">Ngày sinh</label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth" class="c-form-group__input" value="1990-05-15" readonly>
+                        </div>
+                    </div>
+
+                    <div class="c-form__actions" style="margin-top: var(--space-8);">
+                        <button type="button" class="c-btn c-btn--outline" id="editBtn">Chỉnh sửa</button>
+                        <button type="submit" class="c-btn" id="submitBtn" style="display: none;">Lưu thay đổi</button>
+                        <button type="button" class="c-btn c-btn--secondary" id="cancelBtn" style="display: none;">Hủy</button>
+                    </div>
+                </form>
+
+                <!-- Change Password Section -->
+                <form class="c-form" id="passwordForm" style="margin-top: var(--space-8); padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
+                    <h3 class="c-form__title">Đổi mật khẩu</h3>
+
+                    <div class="c-form-group">
+                        <label for="currentPassword">Mật khẩu hiện tại</label>
+                        <input type="password" id="currentPassword" name="currentPassword" class="c-form-group__input" placeholder="Nhập mật khẩu hiện tại">
+                    </div>
+
+                    <div class="c-form-group">
+                        <label for="newPassword">Mật khẩu mới</label>
+                        <input type="password" id="newPassword" name="newPassword" class="c-form-group__input" placeholder="Nhập mật khẩu mới">
+                        <div class="c-form-group__help" style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: var(--space-2);">
+                            Mật khẩu phải chứa ít nhất 8 ký tự, gồm chữ hoa, chữ thường và số
+                        </div>
+                    </div>
+
+                    <div class="c-form-group">
+                        <label for="confirmPassword">Xác nhận mật khẩu</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="c-form-group__input" placeholder="Nhập lại mật khẩu mới">
+                    </div>
+
+                    <div class="c-form__actions" style="margin-top: var(--space-6);">
+                        <button type="submit" class="c-btn">Đổi mật khẩu</button>
+                    </div>
+                </form>
+
+                <!-- Logout Section -->
+                <div style="margin-top: var(--space-8); padding-top: var(--space-8); border-top: 1px solid var(--color-border); text-align: center;">
+                    <button class="c-btn c-btn--outline" style="color: var(--color-danger); border-color: var(--color-danger);" id="logoutBtn">Đăng xuất</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="c-footer">
+        <div class="c-footer__container">
+            <div class="c-footer__content">
+                <p class="c-footer__copyright">Copyright 2025</p>
+            </div>
+            <p style="text-align: center; font-size: var(--font-size-xs); color: var(--color-text-secondary); padding-top: var(--space-4);">
+                Hotline: 0344655621
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/modal.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script>
+        // Profile form edit functionality
+        const editBtn = document.getElementById('editBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const profileForm = document.getElementById('profileForm');
+        const inputs = profileForm.querySelectorAll('input, select');
+
+        editBtn.addEventListener('click', function() {
+            inputs.forEach(input => {
+                input.removeAttribute('readonly');
+                input.removeAttribute('disabled');
+            });
+            editBtn.style.display = 'none';
+            submitBtn.style.display = 'inline-block';
+            cancelBtn.style.display = 'inline-block';
+        });
+
+        cancelBtn.addEventListener('click', function() {
+            profileForm.reset();
+            inputs.forEach(input => {
+                input.setAttribute('readonly', 'readonly');
+                input.setAttribute('disabled', 'disabled');
+            });
+            editBtn.style.display = 'inline-block';
+            submitBtn.style.display = 'none';
+            cancelBtn.style.display = 'none';
+        });
+
+        profileForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thông tin cá nhân đã được cập nhật!');
+            inputs.forEach(input => {
+                input.setAttribute('readonly', 'readonly');
+                input.setAttribute('disabled', 'disabled');
+            });
+            editBtn.style.display = 'inline-block';
+            submitBtn.style.display = 'none';
+            cancelBtn.style.display = 'none';
+        });
+
+        // Change password form
+        const passwordForm = document.getElementById('passwordForm');
+        passwordForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                alert('Mật khẩu mới không khớp!');
+                return;
+            }
+
+            if (newPassword.length < 8) {
+                alert('Mật khẩu phải có ít nhất 8 ký tự!');
+                return;
+            }
+
+            alert('Mật khẩu đã được thay đổi thành công!');
+            passwordForm.reset();
+        });
+
+        // Logout button
+        const logoutBtn = document.getElementById('logoutBtn');
+        logoutBtn.addEventListener('click', function() {
+            if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                window.location.href = '/pages/login.html';
+            }
+        });
+    </script>
+</body>
+</html>

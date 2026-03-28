@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đăng nhập vào SEB">
+    <title>SEB | Đăng nhập</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="c-header">
+        <div class="c-header__inner">
+            <div class="c-header__logo">
+                <img src="/assets/image/logo.png" alt="Logo" style="width: 2.5rem; height: 2.5rem;">
+                <div class="c-header__logo-text">
+                    <h1>HỆ THỐNG MƯỢN/TRẢ THIẾT BỊ</h1>
+                </div>
+            </div>
+            <div class="c-header__actions">
+                <a href="/index.html" class="c-btn c-btn--sm" style="background-color: white; color: var(--color-primary);">← Quay lại</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="c-auth-page">
+        <!-- Illustration -->
+        <div class="c-auth-page__illustration">
+            <img src="/assets/image/illustrations/auth-person.png" alt="Illustration">
+        </div>
+
+        <!-- Form Container -->
+        <div class="c-auth-page__form-container">
+            <form class="c-auth-form c-auth-form--login">
+                <h2 class="c-auth-form__title">ĐĂNG NHẬP</h2>
+
+                <!-- Email Input -->
+                <div class="c-form-group">
+                    <label for="email" class="c-form-group__label">Tên đăng nhập/Email</label>
+                    <input type="email" id="email" class="c-form-group__input" placeholder="Nhập email hoặc tên đăng nhập" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="c-form-group">
+                    <label for="password" class="c-form-group__label">Nhập mật khẩu</label>
+                    <input type="password" id="password" class="c-form-group__input" placeholder="Nhập mật khẩu" required>
+                </div>
+
+                <!-- Forgot Password -->
+                <div class="c-forgot-password">
+                    <a href="#">Quên mật khẩu</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="c-btn c-btn--primary c-btn--block">ĐĂNG NHẬP</button>
+
+                <!-- Divider -->
+                <div class="c-auth-form__divider"></div>
+
+                <!-- Sign Up Link -->
+                <div class="c-auth-form__footer">
+                    Chưa có tài khoản? <a href="/pages/signup.html">Đăng ký</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="c-footer">
+        <div class="c-footer__container">
+            <div class="c-footer__content">
+                <p class="c-footer__copyright">Copyright 2025</p>
+                <p class="c-footer__description">
+                    Website này là tài sản thuộc quyền sở hữu hợp pháp của OFM.
+                </p>
+            </div>
+            <p style="text-align: center; font-size: var(--font-size-xs); color: var(--color-text-secondary); padding-top: var(--space-4);">
+                Hotline: 0344655621
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+/* ========================================
+   RESPONSIVE.CSS - MOBILE-FIRST BREAKPOINTS
+   ======================================== */
+
+/* MOBILE FIRST: Base styles are already mobile-optimized
+   Tablet: 768px+
+   Desktop: 1200px+
+*/
+
+/* ===== TABLET DEVICES (768px - 1199px) ===== */
+@media (min-width: 768px) {
+  /* Typography */
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+  h3 { font-size: var(--font-size-2xl); }
+
+  /* Header adjustments */
+  .c-header {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-4);
+  }
+
+  .c-header__logo img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* Navigation visible on tablet */
+  .c-header__nav-wrapper {
+    order: 2;
+    width: auto;
+    flex-basis: auto;
+  }
+
+  /* Product Grid */
+  .grid--cols-2-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--cols-3-tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Product Cards */
+  .c-product-card__image {
+    height: 14rem;
+  }
+
+  .c-product-card__actions {
+    flex-direction: row;
+  }
+
+  /* News Grid */
+  .c-news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Form two columns */
+  .c-form__row--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Sidebar visibility on tablet */
+  .layout-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  /* Auth page */
+  .c-auth-page {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .c-auth-page__illustration {
+    display: flex;
+  }
+
+  /* Footer news grid */
+  .c-footer__news {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stat cards spacing */
+  .c-stat-card {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  /* Filter sidebar hide on mobile/tablet */
+  .c-sidebar-filter {
+    display: none;
+  }
+
+  /* Modal responsiveness */
+  .c-modal {
+    max-width: 90%;
+  }
+
+  /* Button sizing */
+  .c-btn {
+    padding: var(--space-3) var(--space-5);
+  }
+
+  /* Form spacing */
+  .c-form {
+    padding: var(--space-8);
+  }
+}
+
+/* ===== DESKTOP DEVICES (1200px+) ===== */
+@media (min-width: 1200px) {
+  /* Typography */
+  h1 { font-size: var(--font-size-5xl); }
+  h2 { font-size: var(--font-size-4xl); }
+  h3 { font-size: var(--font-size-3xl); }
+  h4 { font-size: var(--font-size-2xl); }
+
+  /* Header */
+  .c-header {
+    height: var(--header-height);
+  }
+
+  .c-header__logo img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* Logo text only on desktop */
+  .c-header__logo-text {
+    display: flex;
+    align-items: center;
+  }
+
+  .c-header__logo-text h1 {
+    font-size: var(--font-size-base);
+  }
+
+  /* Navigation fully visible */
+  .c-header__nav-wrapper {
+    width: auto;
+    display: flex;
+    order: 2;
+    flex-basis: auto;
+  }
+
+  .c-nav {
+    gap: var(--space-2);
+  }
+
+  .c-nav__item {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-base);
+  }
+
+  /* Search bar prominent on desktop */
+  .c-header__search {
+    flex: 1;
+    max-width: 20rem;
+    order: 3;
+    margin: 0 var(--space-4);
+  }
+
+  /* Actions on right */
+  .c-header__actions {
+    order: 4;
+    gap: var(--space-3);
+  }
+
+  /* Hide menu toggle on desktop */
+  .c-header__menu-toggle {
+    display: none;
+  }
+
+  /* Full width product grid */
+  .grid--cols-3-desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--cols-4-desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Product cards */
+  .c-product-card {
+    border: 1px solid var(--color-border);
+  }
+
+  .c-product-card__image {
+    height: 16rem;
+  }
+
+  /* Sidebar layout on desktop */
+  .layout-sidebar {
+    grid-template-columns: 12.5rem 1fr;
+    gap: var(--space-6);
+  }
+
+  .c-sidebar-filter {
+    display: block;
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-4));
+    height: fit-content;
+    max-height: calc(100vh - var(--header-height) - var(--space-8));
+    overflow-y: auto;
+  }
+
+  /* Main content */
+  .layout-sidebar__main {
+    min-width: 0;
+  }
+
+  /* Two column layout */
+  .c-auth-page {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .c-auth-page__illustration {
+    display: flex;
+  }
+
+  /* Form layout */
+  .c-form {
+    max-width: 34rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .c-form__row--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .c-form__actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: var(--space-3);
+  }
+
+  /* Button sizing */
+  .c-btn {
+    padding: var(--space-3) var(--space-6);
+    min-width: 8rem;
+  }
+
+  /* News grid */
+  .c-news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer columns */
+  .c-footer__news {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Pagination */
+  .c-pagination {
+    margin-top: var(--space-8);
+  }
+
+  /* Calendar max width */
+  .c-calendar {
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Dropdowns and popovers */
+  .c-profile-dropdown {
+    min-width: 14rem;
+  }
+
+  /* Hover effects */
+  .c-product-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .c-news-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Section spacing desktop */
+  section {
+    padding: var(--space-10) var(--container-padding-desktop);
+  }
+
+  /* Container max width enforced */
+  .container {
+    padding-left: var(--container-padding-desktop);
+    padding-right: var(--container-padding-desktop);
+  }
+
+  /* Stat cards */
+  .c-stat-card {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .c-stat-card__value {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+/* ===== LARGE DESKTOP (1440px+) ===== */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  /* Extra spacing on very large screens */
+  section {
+    padding: var(--space-12) var(--container-padding-desktop);
+  }
+
+  /* Grid cols for large screens */
+  .grid--cols-4-desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Header size adjustments */
+  .c-header__logo img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* ===== SMALL MOBILE (320px - 374px) ===== */
+@media (max-width: 373px) {
+  /* Typography */
+  h1 { font-size: var(--font-size-2xl); }
+  h2 { font-size: var(--font-size-xl); }
+  h3 { font-size: var(--font-size-base); }
+
+  /* Tighter spacing */
+  section {
+    padding: var(--space-4) var(--space-2);
+  }
+
+  .container {
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+  }
+
+  /* Button sizing */
+  .c-btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Form spacing */
+  .c-form {
+    padding: var(--space-4);
+  }
+
+  /* Card spacing */
+  .c-product-card {
+    padding: var(--space-3);
+  }
+
+  .c-product-card__content {
+    padding: var(--space-3);
+  }
+
+  /* Header smaller */
+  .c-header {
+    padding: var(--space-2) var(--space-2);
+  }
+
+  .c-header__logo img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .c-header__logo-text h1 {
+    font-size: var(--font-size-xs);
+  }
+
+  /* Reduce gaps */
+  .grid {
+    gap: var(--space-2);
+  }
+
+  /* Footer adjust */
+  .c-footer {
+    padding: var(--space-4) var(--space-2);
+  }
+}
+
+/* ===== PRINT MEDIA ===== */
+@media print {
+  .c-header,
+  .c-footer,
+  .c-header__menu-toggle,
+  .c-sidebar-filter {
+    display: none;
+  }
+
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  .c-btn {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .c-product-card,
+  .c-news-card {
+    page-break-inside: avoid;
+    border: 1px solid black;
+  }
+}
+
+/* ===== DARK MODE (if needed in future) ===== */
+@media (prefers-color-scheme: dark) {
+  /* Can add dark mode styles here */
+  /* Currently using light mode only */
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: more) {
+  .c-btn {
+    border: 2px solid currentColor;
+  }
+
+  .c-form-group__input,
+  .c-form-group__select,
+  .c-form-group__textarea {
+    border-width: 2px;
+  }
+
+  .c-product-card,
+  .c-card {
+    border-width: 2px;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

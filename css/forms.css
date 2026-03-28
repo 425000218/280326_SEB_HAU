@@ -1,0 +1,292 @@
+/* ========================================
+   FORMS.CSS - FORM ELEMENTS & VALIDATION
+   ======================================== */
+
+/* ===== FORM GROUP ===== */
+.c-form-group {
+  margin-bottom: var(--space-5);
+}
+
+.c-form-group__label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.c-form-group__label.required::after {
+  content: " *";
+  color: var(--color-danger);
+}
+
+.c-form-group__input,
+.c-form-group__select,
+.c-form-group__textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  transition: all var(--transition-fast);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.c-form-group__input:focus,
+.c-form-group__select:focus,
+.c-form-group__textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.1);
+}
+
+.c-form-group__input::placeholder,
+.c-form-group__select::placeholder,
+.c-form-group__textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* Error State */
+.c-form-group__input.is-error,
+.c-form-group__select.is-error,
+.c-form-group__textarea.is-error {
+  border-color: var(--color-danger);
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.c-form-group__input.is-error:focus,
+.c-form-group__select.is-error:focus,
+.c-form-group__textarea.is-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  border-color: var(--color-danger);
+}
+
+/* Success State */
+.c-form-group__input.is-success,
+.c-form-group__select.is-success,
+.c-form-group__textarea.is-success {
+  border-color: var(--color-success);
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.c-form-group__input.is-success:focus,
+.c-form-group__select.is-success:focus,
+.c-form-group__textarea.is-success:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  border-color: var(--color-success);
+}
+
+/* Textarea */
+.c-form-group__textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+/* Select */
+.c-form-group__select {
+  cursor: pointer;
+}
+
+/* Help Text */
+.c-form-group__help {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.c-form-group__help.is-error {
+  color: var(--color-danger);
+}
+
+.c-form-group__help.is-success {
+  color: var(--color-success);
+}
+
+/* ===== CHECKBOX ===== */
+.c-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: var(--space-3);
+}
+
+.c-checkbox__input {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.c-checkbox__label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  flex: 1;
+}
+
+.c-checkbox__label a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ===== RADIO BUTTON ===== */
+.c-radio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: var(--space-3);
+}
+
+.c-radio__input {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.c-radio__label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+/* ===== FORM LAYOUT ===== */
+.c-form {
+  padding: var(--space-6);
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .c-form {
+    padding: var(--space-8);
+  }
+}
+
+.c-form__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-6);
+  color: var(--color-text-primary);
+}
+
+.c-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .c-form__row--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.c-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .c-form__actions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* ===== FORM VALIDATION ===== */
+.c-form-group.is-error .c-form-group__label {
+  color: var(--color-danger);
+}
+
+.c-form-group.is-success .c-form-group__label {
+  color: var(--color-success);
+}
+
+/* ===== ICON INPUT (with icon inside) ===== */
+.c-input-wrapper {
+  position: relative;
+}
+
+.c-input-wrapper__icon {
+  position: absolute;
+  top: 50%;
+  right: var(--space-3);
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.c-input-wrapper__input {
+  padding-right: var(--space-10);
+}
+
+/* ===== SEARCH INPUT ===== */
+.c-search {
+  position: relative;
+}
+
+.c-search__input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-10);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-base);
+}
+
+.c-search__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.c-search__icon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  pointer-events: none;
+}
+
+/* ===== FLOATING LABEL ===== */
+.c-form-group--float {
+  position: relative;
+}
+
+.c-form-group--float .c-form-group__label {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-4);
+  background-color: var(--color-bg-primary);
+  padding: 0 var(--space-2);
+  z-index: 1;
+  transition: all var(--transition-fast);
+  pointer-events: none;
+  margin-bottom: 0;
+  font-size: var(--font-size-sm);
+}
+
+.c-form-group--float .c-form-group__input {
+  padding-top: var(--space-5);
+}
+
+.c-form-group--float .c-form-group__input:focus ~ .c-form-group__label,
+.c-form-group--float .c-form-group__input:not(:placeholder-shown) ~ .c-form-group__label {
+  top: -0.75rem;
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+}

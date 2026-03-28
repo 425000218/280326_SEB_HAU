@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SEB - Hệ thống Mượn/Trả Thiết Bị cho Trường Trung Học Số Lộc An">
+    <title>SEB | Trang chủ - Hệ thống Mượn/Trả Thiết Bị</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="c-header">
+        <div class="c-header__inner">
+            <!-- Logo -->
+            <div class="c-header__logo">
+                <img src="/assets/image/logo.png" alt="Logo">
+                <div class="c-header__logo-text">
+                    <h1>TRƯỜNG TRUNG HỌC<br>HỆ THỐNG MƯỢN/TRẢ THIẾT BỊ</h1>
+                </div>
+            </div>
+
+            <!-- Menu Toggle for Mobile -->
+            <button class="c-header__menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+            <!-- Navigation -->
+            <nav class="c-header__nav-wrapper" id="navWrapper">
+                <ul class="c-nav">
+                    <li><button class="c-nav__item active" data-page="home">Trang chủ</button></li>
+                    <li><a href="/pages/kho.html" class="c-nav__item">Kho thiết bị</a></li>
+                    <li><a href="/pages/lich.html" class="c-nav__item">Lịch</a></li>
+                    <li><a href="/pages/mon-hoc.html" class="c-nav__item">Môn học</a></li>
+                    <li><a href="#" class="c-nav__item">Tin tức</a></li>
+                    <li><a href="#" class="c-nav__item">Liên hệ</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search -->
+            <div class="c-header__search">
+                <input type="text" class="c-header__search-input" placeholder="Tìm kiếm thiết bị...">
+            </div>
+
+            <!-- Actions -->
+            <div class="c-header__actions">
+                <button class="c-btn c-btn--sm" id="loginBtn" style="background-color: white; color: var(--color-primary);">👤</button>
+                <button class="c-btn c-btn--sm" id="profileBtn" style="display: none;">✎</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Stats Section -->
+        <section style="background-color: var(--color-bg-secondary);">
+            <div class="container">
+                <div class="grid grid--cols-2-tablet grid--cols-3-desktop">
+                    <div class="c-stat-card">
+                        <div class="c-stat-card__label">Thiết bị hiện có</div>
+                        <div class="c-stat-card__value">2,580</div>
+                    </div>
+                    <div class="c-stat-card">
+                        <div class="c-stat-card__label">Bảo trì</div>
+                        <div class="c-stat-card__value">3</div>
+                    </div>
+                    <div class="c-stat-card">
+                        <div class="c-stat-card__label">Đã mượn</div>
+                        <div class="c-stat-card__value">18</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">Thiết bị mượn gần đây</h2>
+
+                <div class="layout-sidebar">
+                    <!-- Sidebar Filter -->
+                    <aside class="layout-sidebar__sidebar c-sidebar-filter">
+                        <div class="c-sidebar-filter__section">
+                            <h4 class="c-sidebar-filter__title">Bộ lọc</h4>
+                            <div class="c-sidebar-filter__item">
+                                <input type="checkbox" id="filter-all" checked>
+                                <label for="filter-all">Tất cả</label>
+                            </div>
+                            <div class="c-sidebar-filter__item">
+                                <input type="checkbox" id="filter-truck">
+                                <label for="filter-truck">Khoa học tự nhiên</label>
+                            </div>
+                            <div class="c-sidebar-filter__item">
+                                <input type="checkbox" id="filter-vat-ly">
+                                <label for="filter-vat-ly">Vật lý</label>
+                            </div>
+                            <div class="c-sidebar-filter__item">
+                                <input type="checkbox" id="filter-hoa">
+                                <label for="filter-hoa">Hóa</label>
+                            </div>
+                        </div>
+
+                        <div class="c-sidebar-filter__section">
+                            <h4 class="c-sidebar-filter__title">Môn học</h4>
+                            <div class="c-sidebar-filter__item">
+                                <input type="checkbox" id="filter-math">
+                                <label for="filter-math">Toán</label>
+                            </div>
+                            <div class="c-sidebar-filter__item">
+                                <input type="checkbox" id="filter-it">
+                                <label for="filter-it">Tin học</label>
+                            </div>
+                            <div class="c-sidebar-filter__item">
+                                <input type="checkbox" id="filter-khtn">
+                                <label for="filter-khtn">KHTN</label>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <div class="layout-sidebar__main">
+                        <div class="grid grid--cols-2-tablet grid--cols-3-desktop">
+                            <!-- Product Card 1 -->
+                            <div class="c-product-card">
+                                <img src="/assets/image/products/placeholder.png" alt="Máy chiếu" class="c-product-card__image">
+                                <div class="c-product-card__content">
+                                    <h3 class="c-product-card__name">Máy chiếu Panasonic</h3>
+                                    <div class="c-product-card__model">ID: TC2208/192 | Panasonic</div>
+                                    <div class="c-product-card__supplier">1 giờ trước</div>
+                                    <div class="c-product-card__actions">
+                                        <button class="c-btn c-btn--primary c-btn--sm">Mượn</button>
+                                        <button class="c-btn c-btn--accent c-btn--sm">Thêm vào bộ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Card 2 -->
+                            <div class="c-product-card">
+                                <img src="/assets/image/products/placeholder.png" alt="Nhiệt kế" class="c-product-card__image">
+                                <div class="c-product-card__content">
+                                    <h3 class="c-product-card__name">Nhiệt kế 100 độ</h3>
+                                    <div class="c-product-card__model">ID: TC2209/192 | Khtn</div>
+                                    <div class="c-product-card__supplier">1 giờ trước</div>
+                                    <div class="c-product-card__actions">
+                                        <button class="c-btn c-btn--primary c-btn--sm">Mượn</button>
+                                        <button class="c-btn c-btn--accent c-btn--sm">Thêm vào bộ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Card 3 -->
+                            <div class="c-product-card">
+                                <img src="/assets/image/products/placeholder.png" alt="Trường" class="c-product-card__image">
+                                <div class="c-product-card__content">
+                                    <h3 class="c-product-card__name">Thước độ độ</h3>
+                                    <div class="c-product-card__model">ID: TC2210/192 | Khtn</div>
+                                    <div class="c-product-card__supplier">2 giờ trước</div>
+                                    <div class="c-product-card__actions">
+                                        <button class="c-btn c-btn--primary c-btn--sm">Mượn</button>
+                                        <button class="c-btn c-btn--accent c-btn--sm">Thêm vào bộ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Card 4 -->
+                            <div class="c-product-card">
+                                <img src="/assets/image/products/placeholder.png" alt="Laptop" class="c-product-card__image">
+                                <div class="c-product-card__content">
+                                    <h3 class="c-product-card__name">Laptop Dell XPS</h3>
+                                    <div class="c-product-card__model">ID: TC2211/192 | Tin học</div>
+                                    <div class="c-product-card__supplier">2 giờ trước</div>
+                                    <div class="c-product-card__actions">
+                                        <button class="c-btn c-btn--primary c-btn--sm">Mượn</button>
+                                        <button class="c-btn c-btn--accent c-btn--sm">Thêm vào bộ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Card 5 -->
+                            <div class="c-product-card">
+                                <img src="/assets/image/products/placeholder.png" alt="Màn hình" class="c-product-card__image">
+                                <div class="c-product-card__content">
+                                    <h3 class="c-product-card__name">Màn hình Dell S2423</h3>
+                                    <div class="c-product-card__model">ID: TC2212/192 | Tin học</div>
+                                    <div class="c-product-card__supplier">3 giờ trước</div>
+                                    <div class="c-product-card__actions">
+                                        <button class="c-btn c-btn--primary c-btn--sm">Mượn</button>
+                                        <button class="c-btn c-btn--accent c-btn--sm">Thêm vào bộ</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Card 6 -->
+                            <div class="c-product-card">
+                                <img src="/assets/image/products/placeholder.png" alt="Bộ lục kế" class="c-product-card__image">
+                                <div class="c-product-card__content">
+                                    <h3 class="c-product-card__name">Bộ lục kế</h3>
+                                    <div class="c-product-card__model">ID: TC2213/192 | Khtn</div>
+                                    <div class="c-product-card__supplier">5 giờ trước</div>
+                                    <div class="c-product-card__actions">
+                                        <button class="c-btn c-btn--primary c-btn--sm">Mượn</button>
+                                        <button class="c-btn c-btn--accent c-btn--sm">Thêm vào bộ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <h2 class="section-title">Thông tin bảo trì/cập nhật</h2>
+
+                <div class="grid grid--cols-2-tablet c-news-grid">
+                    <div class="c-news-card">
+                        <img src="/assets/image/news-placeholder.png" alt="News" class="c-news-card__image">
+                        <div class="c-news-card__content">
+                            <h3 class="c-news-card__title">Các trường đại học cao đẳng tập trung...</h3>
+                            <p class="c-news-card__desc">Tây Nam Bộ chưa để giải pháp tháo gỡ những vướng mắc cho các học sinh trên toàn bộ...</p>
+                            <div class="c-news-card__date">10/12/2025 08:30</div>
+                        </div>
+                    </div>
+
+                    <div class="c-news-card">
+                        <img src="/assets/image/news-placeholder.png" alt="News" class="c-news-card__image">
+                        <div class="c-news-card__content">
+                            <h3 class="c-news-card__title">Hiệp hội chế tạo dam góp ý...</h3>
+                            <p class="c-news-card__desc">Ngoài ra, chúng tôi cùng với các cơ quan quản lý, quyết định chương trình và biểu đạo tạo...</p>
+                            <div class="c-news-card__date">09/12/2025 14:20</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QR Tip Section -->
+        <section>
+            <div class="container" style="text-align: center;">
+                <p style="font-size: var(--font-size-base); color: var(--color-text-secondary); margin-bottom: var(--space-2);">💡</p>
+                <p style="font-size: var(--font-size-lg); color: var(--color-primary); font-weight: var(--font-weight-semibold);">
+                    Bạn có thể quét mã QR để mượn, trả và báo hỏng thiết bị nhanh chóng!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="c-footer">
+        <div class="c-footer__container">
+            <div class="c-footer__content">
+                <p class="c-footer__copyright">Copyright 2025</p>
+                <p class="c-footer__description">
+                    Website này là tài sản thuộc quyền sở hữu hợp pháp của OFM.<br>
+                    Nội dung, hình ảnh và mã nguồn được bảo hộ theo quy định pháp luật hiện hành.<br>
+                    Mọi thông chi tiết xin liên hệ
+                </p>
+            </div>
+
+            <div class="c-footer__divider"></div>
+
+            <div class="c-footer__contact">
+                <div class="c-footer__contact-item">
+                    <span class="c-footer__contact-icon">✉</span>
+                    <span>Hotline: 0344655621</span>
+                </div>
+            </div>
+
+            <div class="c-footer__divider"></div>
+
+            <div class="c-footer__news">
+                <div class="c-footer__news-item">
+                    <span class="c-footer__news-icon">📰</span>
+                    <div class="c-footer__news-text">
+                        <strong>Các trường đại học cao đẳng tập trung...</strong><br>
+                        Tây Nam Bộ chưa để giải pháp tháo gỡ những vướng mắc cho các học sinh...
+                    </div>
+                </div>
+
+                <div class="c-footer__news-item">
+                    <span class="c-footer__news-icon">📰</span>
+                    <div class="c-footer__news-text">
+                        <strong>Hiệp hội chế tạo dam góp ý...</strong><br>
+                        Ngoài ra, chúng tôi cùng với các cơ quan quản lý, quyết định chương trình...
+                    </div>
+                </div>
+
+                <div class="c-footer__news-item">
+                    <span class="c-footer__news-icon">📰</span>
+                    <div class="c-footer__news-text">
+                        <strong>Kết nối chia sẻ thị trực, thực dạy...</strong><br>
+                        Chuyên đồ sở trong dạy tao Sây - Kiến thức nền hóc nên nó miễn phí...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/sidebar-filter.js"></script>
+    <script src="/assets/js/modal.js"></script>
+</body>
+</html>
