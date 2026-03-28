@@ -108,9 +108,6 @@
 }
 
 /* Login Specific */
-.c-auth-form--login {
-}
-
 .c-auth-form--login .c-auth-form__title {
   margin-bottom: var(--space-6);
 }
@@ -135,9 +132,6 @@
 }
 
 /* Signup Specific */
-.c-auth-form--signup {
-}
-
 .c-auth-form--signup .c-form-group {
   margin-bottom: var(--space-4);
 }
